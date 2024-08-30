@@ -1,0 +1,150 @@
+/* styles.css */
+
+/* Resetting some default browser styles */
+body, h1, h2, ul, li {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Basic styling */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #1e3c72, #982a92);
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: linear-gradient(135deg, #c2c9d3, #9f5e9d);
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 100%;
+    max-width: 700px;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Headings */
+h1 {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 2em;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #000000;
+    font-size: 1.5em;
+}
+
+/* Task Input Section */
+.task-input {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#taskInput {
+    flex: 1;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1em;
+}
+
+/* Buttons */
+button {
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+/* Grid Layout for Navigation and Action Buttons */
+.navigation-buttons, .action-buttons {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+/* Sections */
+.section {
+    display: none;
+}
+
+.section.active {
+    display: block;
+}
+
+/* Task List */
+.task-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.task-list li {
+    display: flex;
+    align-items: center;
+    padding: 12px;
+    border-bottom: 1px solid #ddd;
+    gap: 10px;
+}
+
+.task-list li:last-child {
+    border-bottom: none;
+}
+
+/* Task as Input Field */
+.task-list li input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1.1em;
+    background: #f9f9f9;
+}
+
+/* Task Actions */
+.task-list li .task-actions {
+    display: flex;
+    gap: 10px;
+    margin-left: auto; /* Pushes buttons to the right side */
+}
+
+.task-list li .task-actions button {
+    background-color: #ffc107;
+    font-size: 0.9em;
+    padding: 8px 12px;
+}
+
+.task-list li .task-actions button:hover {
+    background-color: #e0a800;
+}
+
+/* Radio Button */
+.task-list li input[type="radio"] {
+    margin-right: 10px;
+}
+
+.task-list .completed input[type="text"] {
+    text-decoration: line-through;
+    color: #888;
+}
+
+.task-list .padding input[type="text"] {
+    background-color: #e9ecef;
+}

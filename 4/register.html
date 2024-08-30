@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #8e44ad, #3498db); /* Soft background color */
+        }
+        .container {
+            background: #ffffff;
+            padding: 30px; /* Space around the container */
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            width: 550px;
+            text-align: center;
+            padding: 30px;
+            box-sizing: border-box; /* Ensures padding is included in width */
+        }
+        h2 {
+            margin-bottom: 20px;
+            color: #5a3ea0; /* Dark purple color */
+        }
+        input {
+            display: block;
+            width: calc(100% - 60px); /* Reduced width to not touch container edges */
+            margin: 15px auto; /* Centers input with margin on top and bottom */
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 25px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+        input:focus {
+            border-color: #5a3ea0; /* Dark purple focus */
+        }
+        button {
+            width: calc(100% - 60px); /* Reduced width for consistent spacing */
+            padding: 15px;
+            margin: 15px auto; /* Center the button */
+            background-color: #5a3ea0;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #463071; /* Slightly darker purple on hover */
+        }
+        a {
+            display: block;
+            margin-top: 15px;
+            color: #5a3ea0;
+            text-decoration: none;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+        a:hover {
+            color: #463071; /* Darker purple on hover */
+        }
+        label {
+            display: flex;
+            justify-content: left;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Register</h2>
+        <label for="Username" name="username">Username</label><br>
+        <input type="text" id="username" placeholder="Enter username" required>
+        <label for="Password" name="Password">Password</label><br>
+        <input type="password" id="password" placeholder="Enter password" required>
+        <button onclick="register()">Register</button>
+        <a href="login.html">Already have an account? Login</a>
+    </div>
+
+    <script>
+        function register() {
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+
+            if (username && password) {
+                localStorage.setItem('username', username);
+                localStorage.setItem('password', password);
+                alert('Registration successful!');
+                window.location.href = 'login.html';
+            } else {
+                alert('Please fill out all fields');
+            }
+        }
+    </script>
+</body>
+</html>
